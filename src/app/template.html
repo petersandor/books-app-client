@@ -1,0 +1,17 @@
+<md-content>
+    <md-toolbar color="accent">
+        <!--<md-icon class="demo-toolbar-icon">menu</md-icon>-->
+        <span>{{appName}}</span>
+        <span class="main-fill-remaining"></span>
+    </md-toolbar>
+    <!--<header>
+    <nav>
+        <a [routerLink]="['Home']">Home</a>
+        <a [routerLink]="['About']">About</a>
+        <a [routerLink]="['Login']">Login</a>
+    </nav>
+</header>-->
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+</md-content>
