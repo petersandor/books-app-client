@@ -1,5 +1,5 @@
 <ul id="bk-list" class="bk-list clearfix">
-    <li *ngFor="let book of books; let i = index" style="z-index: {{i | calcZindex}}">
+    <li *ngFor="let book of books; let i = index" style.z-index="{{i | calcZindex}}">
         <book title="{{book.title}}" authors="{{book.authors}}"></book>
     </li>
     <!--<li style="z-index: 0;">
