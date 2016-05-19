@@ -5,6 +5,10 @@
   height: 100vh;
 }
 
+md-toolbar {
+  box-shadow: 0 4px 5px 0 rgba(0,0,0,0.26);
+}
+
 header {
   background-color: #4E274C;
   padding: 16px;
@@ -16,11 +20,10 @@ header {
 }
 
 main {
-  padding: 1em;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  // font-family: Arial, Helvetica, sans-serif;
+  // text-align: center;
   margin-top: 50px;
-  flex: 1 0 auto;
+  // flex: 1 0 auto;
 }
 
 footer {
