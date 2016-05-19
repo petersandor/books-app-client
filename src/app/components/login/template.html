@@ -1,23 +1,15 @@
-
-<!--<md-input placeholder="amount" align="end">
-  <span md-prefix>$&nbsp;</span>
-  <span md-suffix>.00</span>
-</md-input>-->
-
-<md-card>
-    <div class="login jumbotron center-block">
-        <h1>Login</h1>
-        <form role="form" (submit)="login(username.value, password.value)">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" #username class="form-control" id="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" #password class="form-control" id="password" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-            <a href="/signup">Click here to Signup</a>
+<md-card class="card-login">
+    <md-toolbar color="primary">Login</md-toolbar>
+    <md-card-content class="card-login__content">
+        <form role="form" (submit)="login($event, username.value, password.value)">
+            <section class="form-group">
+                <md-input id="username" #username class="md-input__full-width" placeholder="E-mail" type="email" novalidate></md-input>
+                <md-input id="password" #password class="md-input__full-width" placeholder="Password" type="password"></md-input>
+            </section>
+            <section class="clearfix">
+                <button type="submit" md-raised-button color="primary" class="pull-left">Log in</button>
+                <button md-raised-button color="primary" class="pull-right" disabled>Sign up</button>
+            </section>
         </form>
-    </div>
+    </md-card-content>
 </md-card>
