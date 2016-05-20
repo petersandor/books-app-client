@@ -1,5 +1,6 @@
 /* beautify ignore:start */
-import {Component} from '@angular/core';
+import {Component, Renderer, ElementRef} from '@angular/core';
+import {NgClass} from '@angular/common';
 /* beautify ignore:end */
 
 @Component({
@@ -8,15 +9,45 @@ import {Component} from '@angular/core';
         'authors',
         'title'
     ],
+    directives: [NgClass],
     styles: [require('./style.scss').toString()],
     template: require('./template.html')
 })
 export class BookComponent {
+    bookEl: Object;
     authors: Array<string> = ['Loading authors..'];
     title: string = 'Loading title..';
+    isOpened: Boolean = false;
+    toggleOutsideClass: Boolean = false;
+    toggleInsideViewClass: Boolean = false;
+    onTransitionEnd: Function;
 
-    constructor() {
-        // this.authors = ['Anthony Burghiss'];
-        // this.title = 'A Catwork Orange';
+    constructor(private elementRef: ElementRef, private renderer: Renderer) {
+
+        this.onTransitionEnd = renderer.listen(elementRef.nativeElement, 'transitionend', (event) => {
+            let parentElement = elementRef.nativeElement.parentElement;
+
+            if(this.isOpened && !this.toggleInsideViewClass) {
+                parentElement.style.zIndex = '20';
+                this.toggleInsideViewClass = true;
+            } else if (!this.isOpened) {
+                parentElement.style.zIndex = parentElement.dataset.defaultZindex;
+                this.toggleOutsideClass = false;
+            }
+        });
+    }
+
+    ngOnDestroy() {
+        this.onTransitionEnd();
+    }
+
+    handleClick(event) {
+        if(!this.isOpened) {
+            this.isOpened = true;
+            this.toggleOutsideClass = true;
+        } else {
+            this.toggleInsideViewClass = false;
+            this.isOpened = false;
+        }
     }
 }
