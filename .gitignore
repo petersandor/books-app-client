@@ -17,7 +17,7 @@ reports/
 
 # Build
 build/
-dist/
+#dist/
 .tmp
 .cache/
 
