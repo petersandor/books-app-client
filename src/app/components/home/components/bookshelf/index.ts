@@ -30,7 +30,7 @@ export class BookshelfComponent {
             this.router.navigate(['Login']);
             return;
         }
-        
+
         this._authHttp.get('http://localhost:9000/api/books')
             .subscribe(
                 data => this.books = data.json(),

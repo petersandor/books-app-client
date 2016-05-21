@@ -7,6 +7,19 @@
 
 md-toolbar {
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.26);
+  padding: 6px 18px;
+
+  .toolbar-icon {
+    margin-right: 14px;
+  }
+
+  .fill-remaining-space {
+    flex: 1 1 auto;
+  }
+  
+  .btn__logout {
+    color: #333;
+  }
 }
 
 header {
@@ -35,16 +48,4 @@ footer {
 .shield {
   width: 750px;
   height: 450px;
-}
-
-.main-toolbar {
-  padding: 6px;
-
-  .main-toolbar-icon {
-    padding: 0 14px 0 14px;
-  }
-
-  .main-fill-remaining {
-    flex: 1 1 auto;
-  }
 }

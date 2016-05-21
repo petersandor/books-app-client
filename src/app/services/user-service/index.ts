@@ -1,10 +1,13 @@
 /* beautify ignore:start */
-import {Injectable} from '@angular/core';
+import {Injectable, Output, EventEmitter} from '@angular/core';
 import {Http, Headers} from '@angular/http';
 /* beautify ignore:end */
 
 @Injectable()
 export class UserService {
+  // Testing EventEmitter
+  @Output() loginStateChange: EventEmitter<any> = new EventEmitter();
+
   private loggedIn = false;
 
   constructor(private http: Http) {
@@ -26,6 +29,7 @@ export class UserService {
         if (res.success) {
           localStorage.setItem('id_token', res.token);
           this.loggedIn = true;
+          this.loginStateChange.emit(true);
         }
 
         return res.success;
@@ -35,6 +39,7 @@ export class UserService {
   logout() {
     localStorage.removeItem('id_token');
     this.loggedIn = false;
+    this.loginStateChange.emit(false);
   }
 
   isLoggedIn() {

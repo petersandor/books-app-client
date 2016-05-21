@@ -1,9 +1,10 @@
 <md-content>
     <md-toolbar color="primary">
         <!--<md-icon class="demo-toolbar-icon">menu</md-icon>-->
-        <md-icon>book</md-icon>
+        <md-icon class="toolbar-icon">book</md-icon>
         <span>{{appName}}</span>
-        <span class="main-fill-remaining"></span>
+        <span class="fill-remaining-space"></span>
+        <button *ngIf="isLoggedIn" md-raised-button class="btn__logout" (click)="logout()">Log out</button>
     </md-toolbar>
     <!--<header>
     <nav>

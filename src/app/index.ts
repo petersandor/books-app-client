@@ -1,6 +1,6 @@
 /// src/app/index.ts
 import {Component} from '@angular/core';
-import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {Router, RouteConfig, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
 import {FORM_PROVIDERS} from '@angular/common';
 
 import '../style/app.scss';
@@ -22,8 +22,20 @@ const APP_TITLE = 'Books App';
  */
 @Component({
     selector: 'app', // <app></app>
-    providers: [...FORM_PROVIDERS, MdIconRegistry, UserService],
-    directives: [...ROUTER_DIRECTIVES, MD_SIDENAV_DIRECTIVES, MD_CARD_DIRECTIVES, MdToolbar, MdButton, MdAnchor, MdIcon],
+    providers: [
+        ...FORM_PROVIDERS,
+        MdIconRegistry,
+        UserService
+    ],
+    directives: [
+        ...ROUTER_DIRECTIVES,
+        MD_SIDENAV_DIRECTIVES,
+        MD_CARD_DIRECTIVES,
+        MdToolbar,
+        MdButton,
+        MdAnchor,
+        MdIcon
+    ],
     pipes: [],
     styles: [require('./style.scss')],
     template: require('./template.html')
@@ -33,7 +45,19 @@ const APP_TITLE = 'Books App';
 
 export class App {
     appName: string = APP_TITLE;
+    isLoggedIn: Boolean = this._userService.isLoggedIn();
 
-    constructor() {
+    constructor(
+        private _userService: UserService,
+        private _router: Router
+    ) {
+        _userService.loginStateChange.subscribe((data) => {
+            this.isLoggedIn = data;
+        });
+    }
+
+    logout() {
+        this._userService.logout();
+        this._router.navigate(['Login']);
     }
 }
