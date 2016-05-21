@@ -161,6 +161,15 @@
 	width: 1px;
 }
 
+.bk-cover h2 span,
+.bk-left h2 span {
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 13px;
+	padding-right: 20px;
+	white-space: nowrap;
+}
+
 .bk-cover:after,
 .bk-back:after {
 	content: '';
@@ -182,6 +191,7 @@
 	width: 400px;
 	height: 40px;
     margin: 0;
+	overflow: hidden;
 	-webkit-transform-origin: 0 0;
 	transform-origin: 0 0;
 	-webkit-transform: rotate(90deg) translateY(-40px);
@@ -244,23 +254,15 @@
 	border-radius: 50%;
 }
 
-/* Individual style & artwork */
+/* Style & artwork */
 
-/* Book 1 */
-.book-1 .bk-front > div,
-.book-1 .bk-back,
-.book-1 .bk-left,
-.book-1 .bk-front:after {
-	background-color: #ff924a;
-}
-
-.book-1 .bk-cover {
+.bk-book .bk-cover {
 	background-image: url(http://tympanus.net/Development/3DBookShowcase/images/1.png);	
 	background-repeat: no-repeat;
 	background-position: 10px 40px;
 }
 
-.book-1 .bk-cover h2 {
+.bk-book .bk-cover h2 {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -271,28 +273,28 @@
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
 }
 
-.book-1 .bk-cover h2 span:first-child,
-.book-1 .bk-left h2 span:first-child {
+.bk-book .bk-cover h2 span:first-child,
+.bk-book .bk-left h2 span:first-child {
 	text-transform: uppercase;
 	font-weight: 400;
 	font-size: 13px;
 	padding-right: 20px;
 }
 
-.book-1 .bk-cover h2 span:first-child {
+.bk-book .bk-cover h2 span:first-child {
 	display: block;
 }
 
-.book-1 .bk-cover h2 span:last-child,
-.book-1 .bk-left h2 span:last-child {
+.bk-book .bk-cover h2 span:last-child,
+.bk-book .bk-left h2 span:last-child {
 	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
 } 
 
-.book-1 .bk-content p {
+.bk-book .bk-content p {
 	font-family: Georgia, Times, "Times New Roman", serif;
 }
 
-.book-1 .bk-left h2 {
+.bk-book .bk-left h2 {
 	color: #fff;
 	font-size: 15px;
 	line-height: 40px;
@@ -300,12 +302,21 @@
 	text-align: right;
 }
 
-.book-1 .bk-back p {
+.bk-book .bk-back p {
 	color: #fff;
 	font-size: 13px;
 	padding: 40px;
 	text-align: center;
 	font-weight: 700;
+}
+
+/* Book 1 */
+
+.book-1 .bk-front > div,
+.book-1 .bk-back,
+.book-1 .bk-left,
+.book-1 .bk-front:after {
+	background-color: #ff924a;
 }
 
 /* Book 2 */
@@ -331,8 +342,8 @@
 }
 
 .book-2 .bk-cover h2 {
-	font-size: 138px;
-	line-height: 102px;
+	// font-size: 138px;
+	// line-height: 102px;
 	padding: 30px;
 }
 
@@ -341,44 +352,44 @@
 	display: block;
 }
 
-.book-2 .bk-cover h2 span:first-child:before {
-	content: 'A novel';
-	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
-	text-transform: uppercase;
-	position: absolute;
-	color: red;
-	font-size: 20px;
-	right: -15px;
-	bottom: -60px;
-}
+// .book-2 .bk-cover h2 span:first-child:before {
+// 	content: 'A novel';
+// 	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+// 	text-transform: uppercase;
+// 	position: absolute;
+// 	color: red;
+// 	font-size: 20px;
+// 	right: -15px;
+// 	bottom: -60px;
+// }
 
-.book-2 .bk-cover h2 span:last-child {
-	font-size: 100px;
-	line-height: 80px;
-	display: block;
-	position: relative;
-}
+// .book-2 .bk-cover h2 span:last-child {
+// 	font-size: 100px;
+// 	line-height: 80px;
+// 	display: block;
+// 	position: relative;
+// }
 
-.book-2 .bk-cover h2 span:last-child:before {
-	content: 'by';
-	font-size: 16px;
-	color: red;
-	position: absolute;
-	top: -32px;
-	left: 62px;
-	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
-}
+// .book-2 .bk-cover h2 span:last-child:before {
+// 	content: 'by';
+// 	font-size: 16px;
+// 	color: red;
+// 	position: absolute;
+// 	top: -32px;
+// 	left: 62px;
+// 	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+// }
 
-.book-2 .bk-cover h2 span:last-child:after {
-	content: '';
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-	background: #f9ed65;
-	position: absolute;
-	top: 5px;
-	left: 101px;
-}
+// .book-2 .bk-cover h2 span:last-child:after {
+// 	content: '';
+// 	width: 20px;
+// 	height: 20px;
+// 	border-radius: 50%;
+// 	background: #f9ed65;
+// 	position: absolute;
+// 	top: 5px;
+// 	left: 101px;
+// }
 
 .book-2 .bk-left h2 {
 	font-size: 20px;
@@ -458,4 +469,61 @@
 	padding: 40px;
 	text-align: center;
 	text-shadow: 0 -1px 0 rgba(0,0,0,0.1);
+}
+
+/* Some color variation for the other books */
+.book-4 .bk-front > div,
+.book-4 .bk-back,
+.book-4 .bk-left,
+.book-4 .bk-front:after {
+	background-color: #cfa6ef;
+}
+
+.book-5 .bk-front > div,
+.book-5 .bk-back,
+.book-5 .bk-left,
+.book-5 .bk-front:after {
+	background-color: #FFC2CE;
+}
+
+.book-6 .bk-front > div,
+.book-6 .bk-back,
+.book-6 .bk-left,
+.book-6 .bk-front:after {
+	background-color: #80B3FF;
+}
+
+.book-7 .bk-front > div,
+.book-7 .bk-back,
+.book-7 .bk-left,
+.book-7 .bk-front:after {
+	background-color: #FD6E8A;
+}
+
+.book-8 .bk-front > div,
+.book-8 .bk-back,
+.book-8 .bk-left,
+.book-8 .bk-front:after {
+	background-color: #A2122F;
+}
+
+.book-9 .bk-front > div,
+.book-9 .bk-back,
+.book-9 .bk-left,
+.book-9 .bk-front:after {
+	background-color: #439877;
+}
+
+.book-10 .bk-front > div,
+.book-10 .bk-back,
+.book-10 .bk-left,
+.book-10 .bk-front:after {
+	background-color: #5E445D;
+}
+
+.book-11 .bk-front > div,
+.book-11 .bk-back,
+.book-11 .bk-left,
+.book-11 .bk-front:after {
+	background-color: #A8936D;
 }

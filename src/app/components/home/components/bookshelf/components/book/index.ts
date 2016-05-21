@@ -17,6 +17,7 @@ export class BookComponent {
     bookEl: Object;
     authors: Array<string> = ['Loading authors..'];
     title: string = 'Loading title..';
+    colorVarNum: Number = Math.floor(Math.random() * (11)) + 1;
     isOpened: Boolean = false;
     toggleOutsideClass: Boolean = false;
     toggleInsideViewClass: Boolean = false;
