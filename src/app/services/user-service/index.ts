@@ -20,7 +20,7 @@ export class UserService {
 
     return this.http
       .post(
-        'http://localhost:9000/auth/local',
+        'https://books-app-server.herokuapp.com/auth/local',
         JSON.stringify({ email, password }),
         { headers }
       )

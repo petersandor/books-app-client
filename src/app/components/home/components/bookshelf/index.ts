@@ -3,7 +3,6 @@ import {Component} from '@angular/core';
 import {Router, CanActivate} from '@angular/router-deprecated';
 /* beautify ignore:end */
 import {AuthHttp, tokenNotExpired} from 'angular2-jwt';
-// import {BookService} from './services/book-service';
 import {Book} from './interfaces/book/book.interface';
 import {BookComponent} from './components/book';
 import {CalcZindexPipe} from './pipes/calc-zindex';
@@ -11,7 +10,6 @@ import {CalcZindexPipe} from './pipes/calc-zindex';
 @Component({
     selector: 'bookshelf',
     directives: [BookComponent],
-    // providers: [BookService],
     pipes: [CalcZindexPipe],
     styles: [require('./style.scss').toString()],
     template: require('./template.html')
@@ -31,7 +29,7 @@ export class BookshelfComponent {
             return;
         }
 
-        this._authHttp.get('http://localhost:9000/api/books')
+        this._authHttp.get('https://books-app-server.herokuapp.com/api/books')
             .subscribe(
                 data => this.books = data.json(),
                 err => console.log(err),
