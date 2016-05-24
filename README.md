@@ -1,6 +1,8 @@
 # [Books App client](https://petersandor.github.io/books-app-client/)
 
-![Screenshot of the app](https://i.imgur.com/AnCZoKx.png)
+[![Screenshot of the app][2]][1]
+  [1]: https://petersandor.github.io/books-app-client/
+  [2]: https://i.imgur.com/AnCZoKx.png
 
 ### Quick start
 
