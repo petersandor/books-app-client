@@ -10,6 +10,7 @@
     "clean-start": "npm run clean && npm start",
     "client": "webpack-dev-server --hot --inline  --progress --profile --colors --display-error-details --display-cached --port 2368",
     "delayed-open": "sleep 5 && open http://localhost:2368",
+    "deploy": "git subtree push --prefix dist origin gh-pages",
     "docker-open-terminal": "docker exec -i ${PWD##*/} /bin/bash",
     "docker-server": "webpack-dev-server --host=0.0.0.0 --hot --inline  --progress --port 2368 & wait",
     "docker-start": "docker run --rm --name ${PWD##*/} -i -p 2368:2368 -v $(pwd)/package.json:/home/yeoman/client/package.json -v $(pwd)/src:/home/yeoman/client/src -v $(pwd)/api:/home/yeoman/client/api cmelion/generator-ng2-webpack:latest",
