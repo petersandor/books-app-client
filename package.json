@@ -47,6 +47,7 @@
     "@angular2-material/core": "^2.0.0-alpha.4",
     "@angular2-material/icon": "^2.0.0-alpha.4",
     "@angular2-material/input": "^2.0.0-alpha.4",
+    "@angular2-material/progress-bar": "^2.0.0-alpha.5-2",
     "@angular2-material/sidenav": "^2.0.0-alpha.4",
     "@angular2-material/toolbar": "^2.0.0-alpha.4",
     "@ngrx/store": "^1.5.0",

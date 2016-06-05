@@ -8,6 +8,11 @@
     padding: 1em;
 }
 
+.card-login__loading {
+    opacity: .2;
+    pointer-events: none;
+}
+
 md-input {
     color: #333;
 }

@@ -1,6 +1,9 @@
 <md-card class="card-login">
     <md-toolbar color="primary">Login</md-toolbar>
-    <md-card-content class="card-login__content">
+    <div class="card-login__progress-bar-container" *ngIf="isLoading">
+        <md-progress-bar mode="query"></md-progress-bar>
+    </div>
+    <md-card-content class="card-login__content" [ngClass]="{'card-login__loading': isLoading}">
         <form role="form" (submit)="login($event, username.value, password.value)">
             <section class="form-group">
                 <md-input id="username" #username class="md-input__full-width" placeholder="E-mail" type="email" novalidate></md-input>
